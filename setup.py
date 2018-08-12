@@ -18,10 +18,11 @@ async def on_message(message):
     if message.content.startswith('!entrar'):
         try:
             channel = message.author.voice.voice_channel
-            await client.send_message(message.channel, "Entrei no canal: `{}`.".format(channel))
+            msg = await client.send_message(message.channel, "Entrei no canal: `{}`.".format(channel))
             await client.join_voice_channel(channel)
         except discord.errors.InvalidArgument:
-            await client.send_message(message.channel, "{}, já estou em um canal de voz!".format(message.author.mention))
+            await client.delete_message(msg)
+            await client.send_message(message.channel, "{}, você precisa entrar em um canal!".format(message.author.mention))
         except Exception as error:
             await client.send_message(message.channel, "Ein Error: ```{error}```".format(error=error))
 
