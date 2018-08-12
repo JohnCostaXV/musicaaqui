@@ -1,5 +1,6 @@
 import discord
 import youtube_dl
+import os
 
 #VOCÊ PRECISA DO YOUTUBE-DL INSTALADO, PARA ISSO DIGITE "pip install youtube_dl" NO CMD!
 client = discord.Client()
