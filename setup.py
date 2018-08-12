@@ -65,7 +65,6 @@ async def on_message(message):
                     mscemb.add_field(name="🔔 Enviado em:", value="`{}`".format(player.uploaded_date))
                     mscemb.add_field(name="👤 Enviado por:", value="`{}`".format(player.uploadeder))
                     mscemb.add_field(name="🕓 Duração:", value="`{}`".format(player.uploadeder))
-                    mscemb.set_thumbnail(url="{}.png".format(player.thumbnail))
                     mscemb.add_field(name="👍 Likes:", value="`{}`".format(player.likes))
                     mscemb.add_field(name="👎 Deslikes:", value="`{}`".format(player.dislikes))
                     await client.send_message(message.channel, embed=mscemb)
