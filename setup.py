@@ -12,18 +12,10 @@ COR = 0xF7FE2E
 async def on_ready():
     print(client.user.name)
     print("===================")
+    await client.change_presence(game=discord.Game(name="o batidão!"))
 
 @client.event
 async def on_message(message):
-    if message.content.startswith('!test'):
-        test = message.content[1:]
-        await client.change_presence(game=discord.Game(name=test))
-        if message.content.replace("!test ", ""):
-            msg = "Opa"
-        else:
-            await client.change_presence(game=discord.Game(name=msg))
-
-
     if message.content.startswith('!entrar'):
         try:
             channel = message.author.voice.voice_channel
