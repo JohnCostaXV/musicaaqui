@@ -16,13 +16,12 @@ async def on_ready():
 @client.event
 async def on_message(message):
     if message.content.startswith('!test'):
-        if message.content.replace("!test", ""):
+        test = message.content[1:]
+        await client.change_presence(game=discord.Game(name=test))
+        if message.content.replace("!test ", ""):
             msg = message.content[0:]
         else:
             await client.change_presence(game=discord.Game(name=msg))
-
-    test = message.content[1:]
-    await client.change_presence(game=discord.Game(name=test))
 
 
     if message.content.startswith('!entrar'):
