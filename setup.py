@@ -19,7 +19,7 @@ async def on_message(message):
         test = message.content[1:]
         await client.change_presence(game=discord.Game(name=test))
         if message.content.replace("!test ", ""):
-            msg = message.content[0:]
+            msg = "Opa"
         else:
             await client.change_presence(game=discord.Game(name=msg))
 
